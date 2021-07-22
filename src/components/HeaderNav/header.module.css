@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.navLink {
+    text-decoration: none;
+}
+
+.selected {
+    border-bottom: 5px solid #fff;
+}
