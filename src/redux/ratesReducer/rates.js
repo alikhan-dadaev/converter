@@ -2,6 +2,9 @@
 const initialState = {
     items: [],
     valute: [],
+    USD: [],
+    EUR: [],
+    BYN: [],
     loading: false
 }
 
@@ -17,7 +20,10 @@ export const ratesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: action.payload,
-                valute: action.payload.Valute,
+                valute: action.valute,
+                USD: action.valute.USD,
+                EUR: action.valute.EUR,
+                BYN: action.valute.BYN,
                 loading: false
             }
 

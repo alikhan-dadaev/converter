@@ -5,7 +5,7 @@ import HeaderNav from "./HeaderNav";
 import styles from "../styles.css";
 import {loadRates} from "../redux/ratesReducer/action";
 import {useEffect} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 
 function App() {
@@ -16,7 +16,9 @@ function App() {
         dispatch(loadRates())
     }, [])
 
+
   return (
+
       <div className="app">
           <div className="header">
             <HeaderNav />
@@ -29,6 +31,7 @@ function App() {
           </Route>
 
         </div>
+
   );
 }
 

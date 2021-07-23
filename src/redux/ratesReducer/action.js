@@ -10,7 +10,7 @@ export const loadRates = () => {
                 dispatch({
                     type: 'rates/load/success',
                     payload: json,
-
+                    valute: json.Valute
                 })
             })
     }

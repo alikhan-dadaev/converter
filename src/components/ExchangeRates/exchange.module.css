@@ -1,19 +1,40 @@
 .rates-block {
     width: 100%;
-    height: 500px;
     margin-top: 50px;
-    border: 1px solid black;
 }
 .rates {
     display: flex;
     justify-content: space-around;
 }
 .rates-block h1 {
-    margin-left: 30px;
+    text-align: center;
 }
-.dollar, .euro, .BYN {
+.base {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.base span {
+    font-size: 24px;
+    font-weight: bold;
+}
+.dollar, .euro, .byn {
     width: 200px;
-    height: 200px;
-    border: 1px solid black;
+}
+.valute-title {
+    text-align: center;
+}
+.valute-title span {
+    font-weight: bold;
+    font-size: 30px;
+}
+.valute-name {
+    font-size: 14px;
+    opacity: 0.5;
+}
+.value {
+    margin-top: 10px;
+    font-size: 24px;
+    opacity: 0.7;
 }
 
