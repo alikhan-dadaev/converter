@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styles from "./exchange.module.css";
 import {useSelector} from "react-redux";
 
@@ -7,7 +7,6 @@ function ExchangeRates(props) {
     const dollar = useSelector(state => state.rates.USD);
     const euro = useSelector(state => state.rates.EUR);
     const byn = useSelector(state => state.rates.BYN);
-
 
 
   return (

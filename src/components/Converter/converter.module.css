@@ -1,0 +1,21 @@
+.converter {
+    width: 1140px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.input-field {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+}
+.equals {
+    font-weight: bold;
+    font-size: 30px;
+}
+select {
+    margin-left: 5px;
+
+}

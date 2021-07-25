@@ -3,9 +3,11 @@ import ExchangeRates from "./ExchangeRates";
 import Converter from "./Converter";
 import HeaderNav from "./HeaderNav";
 import styles from "../styles.css";
-import {loadRates} from "../redux/ratesReducer/action";
 import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {loadRates} from "../redux/ratesReducer/action";
+import {loadConvertRates} from "../redux/convertReducer/action";
+
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadRates())
+        dispatch(loadRates());
+        dispatch(loadConvertRates());
     }, [])
 
 

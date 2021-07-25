@@ -5,9 +5,16 @@
 }
 
 .navLink {
+    color: #8d8d8d;
     text-decoration: none;
+}
+
+.navLink:hover {
+    color: #8d8d8d;
+    border-bottom: 5px solid #8d8d8d;
 }
 
 .selected {
     border-bottom: 5px solid #fff;
+    color: white;
 }

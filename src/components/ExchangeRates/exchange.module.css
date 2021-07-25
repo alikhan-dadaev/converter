@@ -7,19 +7,29 @@
     justify-content: space-around;
 }
 .rates-block h1 {
+    width: 200px;
+    margin: auto;
     text-align: center;
 }
 .base {
+    width: 200px;
+    margin: 20px auto;
     text-align: center;
-    margin-bottom: 20px;
     font-size: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
 }
 .base span {
     font-size: 24px;
     font-weight: bold;
+
 }
 .dollar, .euro, .byn {
     width: 200px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 30px;
 }
 .valute-title {
     text-align: center;
