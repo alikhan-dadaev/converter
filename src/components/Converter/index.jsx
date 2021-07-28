@@ -1,50 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./converter.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+import { loadConvertRates } from "../../redux/convertReducer/action";
 
 function Converter(props) {
+  const dispatch = useDispatch();
   const loading = useSelector((state) => state.convert.loading);
-  const rates = useSelector(state => state.convert.items) ;
-  const qoutes = useSelector(state => state.convert.quotes)
-  const valute = (rates.quote ? rates.quote : '');
+  const rates = useSelector((state) => state.convert.items);
+  const qoutes = useSelector((state) => state.convert.quotes);
+  const valute = rates.quote ? rates.quote : "";
+  const firstCurrency = useSelector((state) => state.convert.firstCurr);
+  const baseValute = rates.base;
 
 
-
-  const [number, setNumber] = useState(0);
-  const [base, setBase]= useState();
-  console.log(base)
+const [base, setBase] = useState();
 
 
-    const changeNumber = (e) => {
-      setNumber(e.target.value)
-    }
-    const changeCurrency = (e) => {
-        setBase(e.target.value)
-    }
-    const result = number * base;
+  useEffect(() => {
+    dispatch(loadConvertRates());
+  }, []);
+
+
+  const changeCurrency = (e) => {
+    setBase ( e.target.value);
+  }
 
 
 
   return loading ? (
-    "loadig..."
+    "loading..."
   ) : (
     <div className={styles.converter}>
-        <input
-            placeholder="Введите значение"
-            type="number"
-            value={number}
-            onChange={changeNumber}
-        />
-
-        <select value={base} onChange={changeCurrency}>
-            {qoutes.map(quote => (
-                <option key={quote} value={quote}>{quote}</option>
+      <h1>Конвертер</h1>
+        <input type="number" />
+        <select value={base} onChange={changeCurrency} >
+            {qoutes.map(qoute => (
+                <option key={qoute} value={qoute}>{qoute}</option>
             ))}
         </select>
-        <div>base valute: "{base}"</div>
-       <div> RESULT = {result} </div>
-    </div>
+      <div className={styles.equals}>=</div>
+        <input type="number" />
+        <select value={firstCurrency}>
+            {qoutes.map(option => (
+                <option key={option} value={option}>{option}</option>
+            ))}
 
+        </select>
+    </div>
   );
 }
 

@@ -19,6 +19,7 @@ export const convertReducer = (state = initialState, action) => {
                 ...state,
                 items: action.payload,
                 quotes: Object.keys(action.payload.quote),
+                firstCurr: Object.keys(action.payload.quote)[1],
                 loading: false
             }
 

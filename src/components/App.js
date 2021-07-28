@@ -6,7 +6,6 @@ import styles from "../styles.css";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {loadRates} from "../redux/ratesReducer/action";
-import {loadConvertRates} from "../redux/convertReducer/action";
 
 
 
@@ -16,7 +15,6 @@ function App() {
 
     useEffect(() => {
         dispatch(loadRates());
-        dispatch(loadConvertRates());
     }, [])
 
 
