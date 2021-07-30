@@ -1,10 +1,7 @@
 
 const initialState = {
     items: [],
-    valute: [],
-    USD: [],
-    EUR: [],
-    BYN: [],
+    quotes: [],
     loading: false
 }
 
@@ -20,12 +17,22 @@ export const ratesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 items: action.payload,
-                valute: action.valute,
-                USD: action.valute.USD,
-                EUR: action.valute.EUR,
-                BYN: action.valute.BYN,
+                quotes: Object.entries(action.payload.quote),
+                base: action.payload.base,
                 loading: false
-            }
+            };
+
+        case 'get/base/valute':
+            return {
+                ...state,
+                base: action.payload
+            };
+
+        case 'ConvertChangeRates/load/success':
+            return {
+                ...state,
+                items: action.payload,
+            };
 
 
         default:
