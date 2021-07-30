@@ -6,46 +6,54 @@ import {loadChangeBaseRates, setChangeBaseValute} from "../../redux/convertReduc
 
 function ExchangeRates(props) {
     const loading = useSelector(state => state.rates.loading);
-    const quotes = useSelector(state => state.rates.quotes);
+    const quotes = useSelector(state => {
+        if(state.rates.items) {
+            return state.rates.items.quote || {}
+        }
+
+        return {}
+    });
+
     const base = useSelector(state => state.rates.base);
     const dispatch = useDispatch();
-    console.log(base)
 
     useEffect(() => {
         dispatch(loadRates());
     }, [])
 
     useEffect(() => {
-        dispatch(loadChangeBaseRates(base));
+        if(base) {
+            dispatch(loadChangeBaseRates(base));
+        }
     }, [base])
 
     const handleChangeBase = (e) => {
         dispatch(setChangeBaseValute(e.target.value))
     }
 
-  return (
-      loading ? 'loading...' : (
-          <div className={styles.rates}>
-              <h1>Курс валют</h1>
-              <div className={styles.base}>
-                     <select name="base" value={base} onChange={handleChangeBase}>
-                          {quotes.map(quote => (
-                              <option key={quote} value={quote[0]}>{quote[0]}</option>
-                          ))}
+    return (
+        loading ? 'loading...' : (
+            <div className={styles.rates}>
+                <h1>Курс валют</h1>
+                <div className={styles.base}>
+                    <select name="base" value={base} onChange={handleChangeBase}>
+                        {Object.keys(quotes).map(name => (
+                            <option key={name} value={name}>{name}</option>
+                        ))}
                     </select>
-              </div>
-              <div className={styles.rates}>
-                  {quotes.map(quote => {
-                      return (
-                          <div className={styles['rates-block']}>
-                              <div className={styles.quote}>{quote[0]}</div>
-                              <div className={styles.value}>{quote[1].toFixed(4)}</div>
-                          </div>
-                      )
-                  })}
-              </div>
-          </div>
-      )
+                </div>
+                <div className={styles.rates}>
+                    {Object.keys(quotes).map(key => {
+                        return (
+                            <div className={styles['rates-block']}>
+                                <div className={styles.quote}>{key}</div>
+                                <div className={styles.value}>{quotes[key].toFixed(4)}</div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+        )
     );
 
 }
