@@ -8,7 +8,7 @@ function HeaderNav (props) {
             <div className={styles.nav}>
                 <div className={styles.course}>
                     <NavLink
-                        exact to="/exchangeRates"
+                        exact to="/"
                         activeClassName={styles.selected}
                         className={styles.navLink}>
                         Курс валют

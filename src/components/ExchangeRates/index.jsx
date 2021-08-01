@@ -33,24 +33,26 @@ function ExchangeRates(props) {
 
     return (
         loading ? 'loading...' : (
-            <div className={styles.rates}>
-                <h1>Курс валют</h1>
-                <div className={styles.base}>
-                    <select name="base" value={base} onChange={handleChangeBase}>
-                        {Object.keys(quotes).map(name => (
-                            <option key={name} value={name}>{name}</option>
-                        ))}
-                    </select>
-                </div>
+            <div className={styles.main}>
+                <div className={styles.title}><h1>Курс валют</h1></div>
                 <div className={styles.rates}>
-                    {Object.keys(quotes).map(key => {
-                        return (
-                            <div className={styles['rates-block']}>
-                                <div className={styles.quote}>{key}</div>
-                                <div className={styles.value}>{quotes[key].toFixed(4)}</div>
-                            </div>
-                        )
-                    })}
+                    <div className={styles.base}>
+                        <select name="base" value={base} onChange={handleChangeBase}>
+                            {Object.keys(quotes).map(name => (
+                                <option key={name} value={name}>{name}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className={styles.rates}>
+                        {Object.keys(quotes).map(key => {
+                            return (
+                                <div className={styles['rates-block']}>
+                                    <div className={styles.quote}>{key}</div>
+                                    <div className={styles.value}>{quotes[key].toFixed(4)}</div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )

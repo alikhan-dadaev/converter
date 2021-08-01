@@ -1,54 +1,63 @@
+.main {
+  margin: auto;
+  text-align: center;
+}
 .rates {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
 }
 .rates-block {
-    width: 100px;
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 30px;
-    margin: 15px;
-
+  width: 100px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  margin: 15px;
 }
 
 .rates-block h1 {
-    width: 200px;
-    margin: auto;
-    text-align: center;
+  width: 200px;
+  margin: auto;
+  text-align: center;
 }
 .base {
-    width: 200px;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 20px;
-    padding: 5px;
+  width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+}
+.base select {
+  width: 70px;
+  padding: 5px;
+  border-radius: 5px;
+  color: salmon;
+  border: none;
 }
 .base span {
-    font-size: 24px;
-    font-weight: bold;
-
+  font-size: 24px;
+  font-weight: bold;
 }
-.dollar, .euro, .byn {
-    width: 200px;
-    padding: 20px;
-    border: 2px solid white;
-    border-radius: 30px;
+.dollar,
+.euro,
+.byn {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 30px;
 }
 .valute-title {
-    text-align: center;
+  text-align: center;
 }
 .valute-title span {
-    font-weight: bold;
-    font-size: 30px;
+  font-weight: bold;
+  font-size: 30px;
 }
 .valute-name {
-    font-size: 14px;
-    opacity: 0.5;
+  font-size: 14px;
+  opacity: 0.5;
 }
 .value {
-    margin-top: 10px;
-    font-size: 24px;
-    opacity: 0.7;
+  margin-top: 10px;
+  font-size: 24px;
+  opacity: 0.7;
 }
-

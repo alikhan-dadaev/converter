@@ -1,25 +1,28 @@
 .converter {
-    width: 1140px;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-    margin-top: 200px;
-
+  width: 1140px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  margin-top: 200px;
 }
 
-.equals {
-    font-weight: bold;
-    font-size: 30px;
-}
 select {
-    margin-left: 5px;
+  margin-left: 5px;
+}
+.input-field-one {
+  margin-bottom: 30px;
+}
+.convert-from, .convert-to{
+  margin-bottom: 10px;
 }
 input {
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
 }
 select {
-    margin-left: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
 }
